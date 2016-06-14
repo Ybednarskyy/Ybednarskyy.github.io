@@ -1,0 +1,89 @@
+@import url("reset.css");
+
+body {
+	background: #ccc;
+}
+
+#wrapper {
+	background: #fff;
+	padding: 20px;
+	position: absolute;
+	width: 700px;
+	margin: 30px;
+	margin-left: 100px;
+	background: #ddd;
+}
+
+#content {
+	height:400px;
+	width:400px;
+	padding: 20px;
+	background: #99bb55;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+#right-sidebar {
+	height: auto;
+	background: #99bb33;
+	width: 200px;
+	float: right;
+	padding: 10px;
+	margin-right: 0px;
+	position: relative;
+	right: 0;
+	top: 0;
+}
+
+div p  {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+select {
+	width: 100px;
+}
+
+#size {
+	width: 100px;
+	padding: 20px;
+	margin: 10px auto;
+}
+
+#gamersLevel {
+	width: 100px;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+#start {
+	width: 100px;
+	height: 30px;
+	background: #66cc66;
+	margin: 0 auto;
+}
+
+#start-button {
+	margin: 10px auto;
+	width: 100px;
+	padding: 10px;
+}
+
+.hidden {
+	height: 96px;
+	width: 96px;
+	border: 2px outset #ccff44;
+	border-radius: 5px;
+	background: #99cc77;
+	float: left;
+}
+
+.active {
+	height: 96px;
+	width: 96px;
+	border: 2px inset #ccff44;
+	border-radius: 4px;
+	background: #9900dd;
+	float: left;
+}
