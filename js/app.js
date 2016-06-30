@@ -39,39 +39,43 @@ $(function() {
 	
 	var usingColors = CreateColorsArray(colors);
 	
-	var move = -1;
-	var firstClickId;
-	var secondClickId;
+	var CloseCells = function(el) {
+		setTimeout(function(){
+			el.className = "close";
+			el.style.background = "";
+		},
+		500);
+	};
+	
+	var firstClick = -1;
+	var secondClick;
 	
 	$("#content").click(function(event) {
 		var currentCell = event.target;
-
+				
 			if (currentCell.className == "close") {
-				if(move == -1) {
-					firstClickId = currentCell.id;				
-					currentCell.className = "open";
-					currentCell.style.background = usingColors[currentCell.id];	
-					move = currentCell;
+				if (firstClick == -1) {
+					firstClick = currentCell;
+					firstClick.className = "open";
+					firstClick.style.background = usingColors[firstClick.id];
 				} else {
-					secondClickId = currentCell.id;
-					
-					if(usingColors[firstClickId] == usingColors[secondClickId]) {			
-						currentCell.className = "open";
-						currentCell.style.background = usingColors[currentCell.id];	
-						move = -1;
+					secondClick = currentCell;
+					secondClick.className = "open";
+					secondClick.style.background = usingColors[secondClick.id];
+						
+					if ( firstClick.style.background == secondClick.style.background ) {
+						firstClick = -1;
 						closeCells -= 2;
-						console.log(closeCells);
-							if (closeCells == 0) {
-								alert("Excellent !!!");
-							}
+						
+							if (closeCells == 0)
+								alert("Excellent!!!");
+							
 					} else {
-						move.className = "close";
-						move.style.background = "";
-						move = -1;
+						CloseCells(firstClick);
+						CloseCells(secondClick);
+						firstClick = -1;
 					}
 				}
 			}
-			
 	});	
 });
-
